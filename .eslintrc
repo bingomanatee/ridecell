@@ -19,8 +19,11 @@
     "__BASENAME__" : false
   },
   "rules": {
-    "semi" : [2, "never"],
+    "semi" : [2, "always"],
+    "no-irregular-whitespace": 0,
     "max-len": [2, 120, 2],
+    "indent": 0,
+    "react/jsx-indent": 0,
     "flow-vars/define-flow-type": 1,
     "flow-vars/use-flow-type": 1
   }

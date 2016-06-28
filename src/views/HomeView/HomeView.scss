@@ -1,14 +1,65 @@
-.counter {
+@import '../../styles/base';
+
+.appframe {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+h1.appframe__title {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: $teal;
+  flex-grow: 0;
+  box-shadow: rgba(0,0,0,0.25) 0
 }
 
-.counter--green {
-  composes: counter;
-  color: rgb(25,200,25);
+$mapBlur: 10px;
+
+section.appframe__map {
+  flex-grow: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  flex: 1;
+  -webkit-box-shadow: inset 0px 10px $mapBlur -8px rgba(0,0,0,0.33);
+  -moz-box-shadow: inset 0px 10px $mapBlur -8px rgba(0,0,0,0.33);
+  box-shadow: inset 0px 10px $mapBlur -8px rgba(0,0,0,0.33);
+  background-position: top left;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-.duck {
-  display: block;
+nav.appframe__nav {
+  flex-grow: 0;
+  flex-basis: 60px;
+  margin: 0;
+  padding: 0.25rem;
+  height: 60px;
+  border-top: 1px solid $teal;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.resform {
+ position: absolute;
+top: 0;
   width: 100%;
-  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.resform__inner {
+  min-width: 30rem;
+  min-height: 20rem;
+  background-color: white;
+  -webkit-box-shadow: inset 0px 10px $mapBlur -8px rgba(0,0,0,0.33);
+  -moz-box-shadow: 0px 10px $mapBlur -8px rgba(0,0,0,0.66);
+  box-shadow: 0px 10px $mapBlur -8px rgba(0,0,0,0.66);
 }

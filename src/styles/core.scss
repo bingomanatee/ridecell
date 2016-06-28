@@ -9,7 +9,9 @@
   }
 
   html,
-  body {
+  body,
+  .page-container,
+  .view-container{
     margin: 0;
     padding: 0;
     height: 100%;
