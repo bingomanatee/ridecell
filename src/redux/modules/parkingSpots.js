@@ -26,39 +26,87 @@ const ACTION_HANDLERS = {
         state.map((space) => space.id === action.payload ? action.payload : space)
 };
 
+class ParkingSpot {
+    constructor (x, y, id, name, cost, spots, distance, address) {
+        this.x = x;
+        this.y = y;
+        this.id = id;
+        this.name = name;
+        this.cost = cost;
+        this.spots = spots;
+        this.distance = distance;
+        this.address = address;
+    }
+
+    set address (val:string) {
+        this._address = val;
+    }
+
+    get address ():string {
+        return this._address;
+    }
+
+    set distance (val:number) {
+        this._distance = val;
+    }
+
+    get distance ():number {
+        return this._distance;
+    }
+
+    set x (val:number) {
+        this._x = val;
+    }
+
+    get x ():number {
+        return this._x;
+    }
+
+    set y (val:number) {
+        this._y = val;
+    }
+
+    get y ():number {
+        return this._y;
+    }
+
+    set id (val:number) {
+        this._id = val;
+    }
+
+    get id ():number {
+        return this._id;
+    }
+
+    set name (val:string) {
+        this._name = val;
+    }
+
+    get name ():string {
+        return this._name;
+    }
+
+    set cost (val:string) {
+        this._cost = val;
+    }
+
+    get cost ():string {
+        return this._cost;
+    }
+}
+
 // ------------------------------------
 // Reducer
 // ------------------------------------
+
 const initialState = [
-    {
-        x: 50,
-        y: 60,
-        id: 100,
-        cost: '0.25/10 min',
-        spots: 2
-    },
-    {
-        x: 100,
-        y: 200,
-        id: 200,
-        cost: '15.00/all day',
-        spots: 2
-    },
-    {
-        x: 300,
-        y: 150,
-        id: 300,
-        cost: 'free',
-        spots: 2
-    },
-    {
-        x: 400,
-        y: 300,
-        id: 400,
-        cost: '0.10/10 min',
-        spots: 2
-    }
+    new ParkingSpot(50, 60, 100, 'First and Grove', '0.25/10 min', 2, 0.25, '123 First Street'),
+    new ParkingSpot(200, 80, 200, 'Main Street Park', '2.00/hr', 30, 0.3, '200 Main Street'),
+    new ParkingSpot(100, 150, 300, 'Italian Ave.', 'free', 3, 0.5, '1015 Italian Ave'),
+    new ParkingSpot(500, 600, 400, 'Arbor St. Garage', '2.00/half hr', 12, 0.44, '30 Arbor St'),
+    new ParkingSpot(150, 300, 500, 'First and Arbor', 'free', 2, 1, '503 First Street')
 ];
+
 export default function counterReducer (state:array = initialState, action:Action):number {
     const handler = ACTION_HANDLERS[action.type];
 

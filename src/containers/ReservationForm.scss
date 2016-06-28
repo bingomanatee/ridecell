@@ -1,0 +1,106 @@
+@import '../styles/base';
+$formFontSize: 1.5rem;
+
+:global .InputRange-track--active {
+  background-color: $magenta !important;
+}
+
+.resform {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  outline: none;
+  * {
+    outline: none !important;
+  }
+}
+
+.resform__inner {
+  display: flex;
+  flex-direction: column;
+  min-width: 30rem;
+  min-height: 20rem;
+  background-color: white;
+  -webkit-box-shadow: inset 0px 10px $mapBlur -8px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 0px 10px $mapBlur -8px rgba(0, 0, 0, 0.66);
+  box-shadow: 0px 10px $mapBlur -8px rgba(0, 0, 0, 0.66);
+  padding-top: 1.5rem;
+  padding: 1rem;
+  padding-right: 1rem;
+}
+
+.resform__formrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1em;
+  padding-right: 1.5rem;
+  margin-bottom: 0.25rem;
+  color: $darkgray !important;
+  width: 100%;
+  height: 3rem;
+  align-items: flex-end;
+}
+
+.resform__icon {
+  width: 36px;
+  height: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-right: 0.5rem;
+}
+
+.resform__label {
+  flex-grow: 1;
+  font-size: $formFontSize * 0.75;
+  color: $darkgray;
+}
+.resform__reserveForCell {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  padding-right: 1.5rem;
+}
+
+.resform__inputCell {
+  flex-grow: 1;
+  border-bottom: 1px solid $formLine;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 2.4rem;
+  input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    height: 2.4rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-bottom: 1.5rem;
+    line-height: 1.9rem;
+    font-size: 1.75rem;
+  }
+}
+
+.resform__submitBtn {
+  font-size: $formFontSize;
+  font-weight: normal;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: $teal;
+  padding: 0.5rem 3rem;
+  color: white;
+  border: none;
+}

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-// import {bindActionCreators} from 'redux';
+import {bindActionCreators} from 'redux';
+import {chooseSpot} from '../redux/modules/reservation';
 import classNames from './ParkingSpot.scss';
 
 import parkingSpotImage from './ParkingSpot.svg';
@@ -9,10 +10,16 @@ const PIP_WIDTH = 28;
 
 type
 Props = {
-    spot: object
+    spot: object,
+    activeSpot: any
 };
 export class ParkingSpot extends React.Component {
     props:Props;
+
+    static propTypes = {
+        spot: PropTypes.object,
+        chooseSpot: PropTypes.func
+    };
 
     render () {
         const spotStyle = {
@@ -20,9 +27,14 @@ export class ParkingSpot extends React.Component {
             top: `${this.props.spot.y - PIP_WIDTH / 2}px`,
             backgroundImage: `url(${parkingSpotImage})`
         };
-        console.log('spot: ', classNames.spot);
+        
+        var choose = function() {
+            this.props.chooseSpot(this.props.spot);
+        }.bind(this);
+        
         return (
-            <div key={`spot-${this.props.spot.id}`} className={classNames.spot} style={spotStyle}>
+            <div onClick={choose} key={`spot-${this.props.spot.id}`} className={classNames.spot} style={spotStyle}>
+                <h3>{this.props.spot.name}</h3>
             </div>
         );
     }
@@ -31,11 +43,7 @@ export class ParkingSpot extends React.Component {
 const mapStateToProps = (state) => {
     return {};
 };
-const mapDispatchToProps = (dispatch) => {
-    return {};
-};
-
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
+    {chooseSpot}
 )(ParkingSpot);

@@ -1,9 +1,21 @@
+@import '../styles/base';
+
 .spot {
-  position: relative;
+  position: absolute;
   width: 30px;
   height: 30px;
   background-repeat: no-repeat;
   display: block;
-  color: red;
-
+  h3 {
+    position: absolute;
+    margin: 0;
+    padding-left: 40px;
+    display: inline-block;
+    background-color: rgba(255,255,255,0.2);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $teal;
+    white-space: nowrap;
+  }
 }
+
