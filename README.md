@@ -6,3 +6,5 @@ they are settable.
 
 The debug window has been left in place for observation of state changes; 
 it can be edge-dragged right to get rid of it. 
+
+To run locally you can use the dev server instructions at https://github.com/davezuko/react-redux-starter-kit/tree/master/src. 
