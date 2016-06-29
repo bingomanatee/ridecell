@@ -1,11 +1,14 @@
 /* eslint key-spacing:0 */
 export default () => ({
-  compiler_fail_on_warning : false,
-  compiler_hash_type       : 'chunkhash',
-  compiler_devtool         : null,
-  compiler_stats           : {
-    chunks : true,
-    chunkModules : true,
-    colors : true
-  }
+    compiler_fail_on_warning: false,
+    compiler_hash_type: 'chunkhash',
+    compiler_devtool: null,
+    server_port: 80,
+    server_host: 'bingomanatee.github.io/',
+    dir_dist: '',
+    compiler_stats: {
+        chunks: true,
+        chunkModules: true,
+        colors: true
+    }
 });

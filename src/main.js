@@ -8,7 +8,7 @@ import Root from './containers/Root';
 import configureStore from './redux/configureStore';
 
 // Configure history for react-router
-const browserHistory = useRouterHistory(createBrowserHistory)({
+const browserHistory = useRouterHistory(createHashHistory)({
   basename: __BASENAME__
 });
 
