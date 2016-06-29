@@ -10,7 +10,9 @@ import CoreLayout from 'layouts/CoreLayout/CoreLayout';
 import HomeView from 'views/HomeView/HomeView';
 
 export default (store) => (
-    <Route path='/ridecell/' component={CoreLayout}>
-        <IndexRoute component={HomeView}/>
+    <Route path='/ridecell' component={CoreLayout}>
+        <Route path="/">
+            <IndexRoute component={HomeView}/>
+        </Route>
     </Route>
 );
