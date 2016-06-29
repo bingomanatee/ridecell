@@ -9,5 +9,6 @@ export default () => ({
         chunks: true,
         chunkModules: true,
         colors: true
-    }
+    },
+    dir_dist: ''
 });
