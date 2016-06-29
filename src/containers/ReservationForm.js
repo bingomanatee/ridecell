@@ -117,6 +117,6 @@ export class ReservationForm extends React.Component {
 }
 
 export default connect(
-    {}, {
+    (state) => state, {
         display, update, send
     })(ReservationForm);

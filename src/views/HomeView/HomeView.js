@@ -107,6 +107,6 @@ const mapStateToProps = (state) => ({
     parkingSpots: state.parkingSpots,
     reservation: state.reservation
 });
-export default connect((mapStateToProps), {
+export default connect(mapStateToProps, {
     display, send, reset
 })(HomeView);

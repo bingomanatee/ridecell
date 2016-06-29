@@ -1826,7 +1826,9 @@ webpackJsonp([1],[
 	    return ReservationForm;
 	}(_react2.default.Component);
 
-	exports.default = (0, _reactRedux.connect)({}, {
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	    return state;
+	}, {
 	    display: _reservation.display, update: _reservation.update, send: _reservation.send
 	})(ReservationForm);
 
