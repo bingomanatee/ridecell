@@ -5,7 +5,6 @@ export default () => ({
     compiler_devtool: null,
     server_port: 80,
     server_host: 'bingomanatee.github.io/',
-    dir_dist: '',
     compiler_stats: {
         chunks: true,
         chunkModules: true,

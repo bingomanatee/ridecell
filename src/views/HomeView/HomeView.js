@@ -11,7 +11,7 @@ import map from './maps/streets.png';
 import toolbar from './toolbar.png';
 import you from './icons/you.svg';
 
-const bg = img => ({backgroundImage: `url(${img})`});
+const bg = (img) => ({backgroundImage: `url(${img})`});
 
 const mapStyle = bg(map);
 
@@ -46,32 +46,30 @@ export class HomeView extends React.Component<void, Props, void> {
     };
 
     spots () {
-
         if (!this.props.reservation.sent) {
             return '';
         }
 
         const activeId = this.props.reservation.activeSpot ? this.props.reservation.activeSpot.id : false;
-        return this.props.parkingSpots.filter(spot => (!activeId) || (spot.id === activeId))
+        return this.props.parkingSpots.filter((spot) => (!activeId) || (spot.id === activeId))
             .map((spot) => (<ParkingSpot key={`parkingspot${spot.id}`} spot={spot}/>));
-
     }
 
     spotTicket () {
         if (!this.props.reservation.activeSpot) {
             return '';
         }
-        
-        const reset = function() {
+
+        const reset = function () {
             this.props.reset();
         }.bind(this);
-        
-       const save = function () {
+
+        const save = function () {
             alert('saving space');
             this.props.reset();
         }.bind(this);
-        
-        return <SpotTicket save={save} reset={reset} spot={this.props.reservation.activeSpot} />
+
+        return <SpotTicket save={save} reset={reset} spot={this.props.reservation.activeSpot}/>
     }
 
     resForm () {

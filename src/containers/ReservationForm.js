@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux'
-import {bindActionCreators} from 'redux'
 import InputRange from 'react-input-range';
 
 import classes from './ReservationForm.scss';
@@ -11,7 +10,7 @@ type Props = {
     display: any
 }
 
-const bg = img => ({backgroundImage: `url(${img})`});
+const bg = (img) => ({backgroundImage: `url(${img})`});
 
 import location from './icons/location.png';
 import calendar from './icons/calendar.png';
@@ -117,11 +116,7 @@ export class ReservationForm extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {};
-};
-
 export default connect(
-    mapStateToProps, {
+    {}, {
         display, update, send
-    })(ReservationForm)
+    })(ReservationForm);

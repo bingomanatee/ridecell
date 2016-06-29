@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import classes from './SpotTicket.scss';
 import info from './info.svg';
 import park from './park.svg';
@@ -14,7 +14,7 @@ const SpotTicket = (props) => (
                         <p>{props.spot.address}</p>
                     </div>
                     <div className={`${classes.spotticket__cell} ${classes.spotticket__cell_last}`}>
-                        <p className={classes.spotticket__info}><img src={info}/>More</p>
+                        <p className={classes.spotticket__info}><img src={info} />More</p>
                     </div>
                 </div>
                 <div className={classes.spotticket__innerrow}>
